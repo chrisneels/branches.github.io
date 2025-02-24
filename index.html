@@ -79,7 +79,7 @@
   </style>
 </head>
 <body>
-  <!-- Hero section with generative background -->
+  <!-- Hero section with updated generative background -->
   <div class="hero" id="hero"></div>
   
   <!-- Website text content -->
@@ -99,7 +99,7 @@
   </div>
   
   <script>
-    // Three.js setup for a smooth, subtle evolving background with a more defined bottom gradient.
+    // Three.js setup for a smooth, subtle evolving background with a defined vertical gradient.
     let scene, camera, renderer, plane, clock;
     init();
     animate();
@@ -120,7 +120,7 @@
       // Create a full-screen plane.
       const geometry = new THREE.PlaneBufferGeometry(aspect * 2, 2);
       
-      // Shader material for a gentle noise texture with enhanced bottom gradient.
+      // Shader material with gentle noise and a vertical gradient.
       const material = new THREE.ShaderMaterial({
         uniforms: {
           time: { value: 0.0 },
@@ -172,27 +172,25 @@
           }
           
           void main() {
-            // Scale UV coordinates with a higher vertical factor for taller clouds.
-            vec2 uv = vUv * vec2(2.0, 2.5);
-            // Apply horizontal and vertical drift.
+            // Scale UV coordinates with increased vertical factor for taller clouds.
+            vec2 uv = vUv * vec2(2.0, 2.5) + vec2(0.2, 0.1);
+            // Apply horizontal and vertical drift (wind effect).
             uv.x += time * 0.05;
             uv.y += time * 0.02;
             // Combine two layers of noise.
             float n1 = fbm(uv);
             float n2 = fbm(uv * 1.2 + vec2(3.0, 1.0));
             float n = mix(n1, n2, 0.5);
-            // Use smoothstep for a subtle gradient effect.
             float m = smoothstep(0.40, 0.60, n);
-            // Define color palette.
             vec3 darkColor = vec3(0.22);
             vec3 midColor = vec3(0.50);
             vec3 lightColor = vec3(0.85);
-            // Blend colors and reduce overall brightness slightly.
-            vec3 color = mix(darkColor, mix(midColor, lightColor, smoothstep(0.5, 0.7, n)), m) * 0.95;
-            // Enhanced bottom gradient: blend to darkColor from vUv.y = 0.3 to 1.0.
-            float bottomBlend = smoothstep(0.3, 1.0, vUv.y);
-            color = mix(color, darkColor, bottomBlend);
-            gl_FragColor = vec4(color, 1.0);
+            vec3 computedColor = mix(darkColor, mix(midColor, lightColor, smoothstep(0.5, 0.7, n)), m) * 0.95;
+            // Create a vertical gradient: at the top (vUv.y = 0) use lightColor; at bottom (vUv.y = 1) use darkColor.
+            vec3 gradientColor = mix(lightColor, darkColor, vUv.y);
+            // Blend the noise color with the vertical gradient for a more defined effect.
+            vec3 finalColor = mix(computedColor, gradientColor, 0.7);
+            gl_FragColor = vec4(finalColor, 1.0);
           }
         `,
         transparent: false
