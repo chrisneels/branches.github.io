@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>BRANCHES.GLOBAL</title>
+  <title>BRANCHES</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- IBM Plex Mono for text styling -->
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
@@ -63,6 +63,18 @@
       text-decoration: underline;
       color: #333;
     }
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      .content {
+        max-width: 90%;
+        margin-left: 5%;
+        padding: 10px;
+        font-size: 0.85rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -77,10 +89,10 @@
     <p class="small-heading current-experiments">CURRENT EXPERIMENTS</p>
     <ul class="experiments">
       <li>
-        <strong>Speculative Worlds Residency:</strong>Speculative design residency in Komoro, Japan exploring rural revitalization futures. April 21-28, 2025. <a href="#">APPLY</a>
+        <strong>Speculative Worlds Residency:</strong> Speculative design residency in Komoro, Japan exploring rural revitalization futures. April 21-28, 2025. <a href="residency.html">APPLY</a>
       </li>
       <li>
-        <strong>Ontological Design Studio:</strong> Transformative spaces with interdisciplinary research to help teams critically explore, evaluate, and design alternative futures. <a href="#">DETAILS</a>
+        <strong>Ontological Design Studio:</strong> Transformative spaces with interdisciplinary research to help teams critically explore, evaluate, and design alternative futures. <a href="studio.html">DETAILS</a>
       </li>
     </ul>
   </div>
