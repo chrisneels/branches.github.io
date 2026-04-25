@@ -75,6 +75,7 @@ const SharedVideoBg = ({ overlay = 'gradient', flip = false, style, customOverla
     if (!v) return;
     const onErr = () => setVideoFailed(true);
     v.addEventListener('error', onErr);
+    v.playbackRate = 1.1;
     const tryPlay = () => {
       const p = v.play();
       if (p && typeof p.catch === 'function') p.catch(() => {});

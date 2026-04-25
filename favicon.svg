@@ -1,3 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <circle cx="50" cy="50" r="40" fill="#2c2420"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-130 -130 260 260">
+  <g fill="#1a1818">
+    <g transform="rotate(-87)"><path d="M 0 -10 L 112 0 L 0 10 Z"/></g>
+    <g transform="rotate(-38)"><path d="M 0 -7.5 L 78 0 L 0 7.5 Z"/></g>
+    <g transform="rotate(18)"><path d="M 0 -8.3 L 90 0 L 0 8.3 Z"/></g>
+    <g transform="rotate(66)"><path d="M 0 -7 L 62 0 L 0 7 Z"/></g>
+    <g transform="rotate(114)"><path d="M 0 -8.5 L 94 0 L 0 8.5 Z"/></g>
+    <g transform="rotate(162)"><path d="M 0 -7.3 L 70 0 L 0 7.3 Z"/></g>
+    <g transform="rotate(-132)"><path d="M 0 -9 L 100 0 L 0 9 Z"/></g>
+  </g>
 </svg>
