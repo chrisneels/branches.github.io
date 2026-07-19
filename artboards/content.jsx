@@ -3,6 +3,7 @@ const BRANCHES_CONTENT = {
   intro1: ['Branches', ' is a container for creative projects and consulting work by ', { href: 'https://linkedin.com/in/chrisneels', text: 'Chris Neels' }, '.'],
   intro2: 'An overarching interest is exploring alternative potentials from a place of slowness and deliberation.',
   current: [
+    { name: 'Soundings', href: 'https://soundings.place', desc: 'A library of music, sound art, and field recordings, for cultivating different kinds of attention.' },
     { name: 'Studio Akiya', href: 'https://akiya.studio', desc: 'A contemplative residency series for creative practice.' },
     { name: 'Fathom', desc: 'A tool for surfacing values in investment decisions.' },
     { name: 'Futures work', desc: 'An engagement with a financial services company.' },
@@ -17,7 +18,7 @@ const BRANCHES_CONTENT = {
       body: 'Designing environmental conditions that cultivate qualities of mind that support clearer seeing, deeper engagement, and more honest creative work. Projects have included organizing contemplative residencies in rural Japan and reshaping a co-working space in rural Spain.',
     },
   ],
-  email: 'hello@branches.studio',
+  email: 'hello@frombranches.studio',
   past: [
     { project: 'The Future of Culinary Culture', partner: 'Global FoodCo', type: 'Strategic Foresight', year: '2026' },
     { project: 'Rethinking Executive Health', partner: 'TELUS Health', type: 'Experience Design', year: '2026' },
